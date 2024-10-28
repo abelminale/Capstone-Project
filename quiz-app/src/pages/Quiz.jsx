@@ -37,12 +37,18 @@ const Quiz = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      {questions.length > 0 && (
+    <div className="container mx-auto p-8 max-w-2xl">
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-semibold">Question {currentQuestionIndex + 1}/{questions.length}</h2>
+        <p className="text-sm">Score: {score}</p>
+      </div>
+      {questions.length > 0 ? (
         <QuestionCard
           questionData={questions[currentQuestionIndex]}
           onAnswer={handleAnswer}
         />
+      ) : (
+        <p>Loading questions...</p>
       )}
     </div>
   );

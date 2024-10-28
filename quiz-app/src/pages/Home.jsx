@@ -23,12 +23,12 @@ const Home = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Start Quiz</h1>
-      <div className="mb-4">
-        <label>Category</label>
+    <div className="container mx-auto p-8 max-w-lg">
+      <h1 className="text-4xl font-bold text-center mb-10">Quiz App</h1>
+      <div className="mb-6">
+        <label className="block text-lg font-medium mb-2">Select Topic</label>
         <select
-          className="block w-full mt-1 p-2 border"
+          className="w-full p-3 border border-gray-300 rounded-lg"
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
           <option value="">Select Category</option>
@@ -37,10 +37,10 @@ const Home = () => {
           ))}
         </select>
       </div>
-      <div className="mb-4">
-        <label>Difficulty</label>
+      <div className="mb-6">
+        <label className="block text-lg font-medium mb-2">Select Difficulty</label>
         <select
-          className="block w-full mt-1 p-2 border"
+          className="w-full p-3 border border-gray-300 rounded-lg"
           onChange={(e) => setDifficulty(e.target.value)}
         >
           <option value="easy">Easy</option>
@@ -48,20 +48,9 @@ const Home = () => {
           <option value="hard">Hard</option>
         </select>
       </div>
-      <div className="mb-4">
-        <label>Number of Questions</label>
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="block w-full mt-1 p-2 border"
-          min="1"
-          max="50"
-        />
-      </div>
       <button
         onClick={startQuiz}
-        className="bg-blue-500 text-white p-2 rounded mt-4"
+        className="w-full bg-blue-500 text-white py-3 rounded-lg mt-8 hover:bg-blue-600"
       >
         Start Quiz
       </button>
